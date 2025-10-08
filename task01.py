@@ -13,6 +13,7 @@ def get_days_from_today(date: str) -> int:
     Returns: 
         int: number of days; 
     """
+    
     try:
         given_date=datetime.strptime(date,"%Y-%m-%d").date()
     except ValueError:
