@@ -22,5 +22,3 @@ def normalize_phone(phone_number:str) -> str:
          result="38"+result
     return "+"+result
 
-
-  
