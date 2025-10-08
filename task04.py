@@ -36,7 +36,7 @@ def get_upcoming_birthdays(users: list[dict[str,str]]) -> list[dict[str,str]]:
         # If user's congratulation date is Sunday, let's move it on Monday
         if user_congratulation_day.weekday() == 6: 
             user_congratulation_day=user_congratulation_day+timedelta(days=1)
-        # Is user's congratulation date is within a week, let's add him to output
+        # If user's congratulation date is within a week, let's add him to output
         if (user_congratulation_day-today_date)<timedelta(days=7):
             result.append({
                 "name":user["name"],
