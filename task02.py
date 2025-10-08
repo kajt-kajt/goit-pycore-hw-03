@@ -1,6 +1,6 @@
 import random
 
-def get_numbers_ticket(min: int, max: int, quantity:int) -> list:
+def get_numbers_ticket(min: int, max: int, quantity:int) -> list[int]:
     """
     Generate a sorted list of unique random numbers within given boundaries
 
@@ -14,7 +14,7 @@ def get_numbers_ticket(min: int, max: int, quantity:int) -> list:
     Returns:
         list[int]: list of numbers from range
     """
-    
+
     # 1. Let's check input values
     try:
         assert type(min)==int, f'"min" argument should be of type int, but got "{type(min)}" instead.'
