@@ -13,13 +13,13 @@ def get_days_from_today(date: str) -> int:
     Returns: 
         int: number of days; 
     """
-    
+
     try:
-        given_date=datetime.strptime(date,"%Y-%m-%d").date()
+        given_date = datetime.strptime(date,"%Y-%m-%d").date()
     except ValueError:
         print(f"ERROR: Given input value \"{date}\" does not match format \"YYYY-MM-DD\"!")
         return None
     else:
-        curr_date=datetime.today().date()
-        return (curr_date-given_date).days
+        curr_date = datetime.today().date()
+        return (curr_date - given_date).days
 

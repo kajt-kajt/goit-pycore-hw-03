@@ -14,25 +14,31 @@ def get_numbers_ticket(min: int, max: int, quantity:int) -> list[int]:
     Returns:
         list[int]: list of numbers from range
     """
+    
+    chosen_values = []
 
     # 1. Let's check input values
-    try:
-        assert type(min)==int, f'"min" argument should be of type int, but got "{type(min)}" instead.'
-        assert type(max)==int, f'"max" argument should be of type int, but got "{type(max)}" instead.'
-        assert type(quantity)==int, f'"quantity" argument should be of type int, but got "{type(quantity)}" instead.'
-        assert min>=1, f'"min" value should be 1 or greater.'
-        assert max<=1000, f'"max" value should be 1000 or less.'
-        assert min<=max, f'"min" value should not be greater than "max" value.'
-        assert quantity>=0, f'"quantity" value should not be negative.'
-        assert quantity<=max-min+1, f'"quantity" value should not be greater than a pool size of possible values.'
-    except AssertionError as e:
-        print(f"ERROR: {e}")
-        return []
+    if type(min) != int:
+        print(f'ERROR: "min" argument should be of type int, but got "{type(min)}" instead.')
+    elif type(max) != int:
+        print(f'ERROR: "max" argument should be of type int, but got "{type(max)}" instead.')
+    elif type(quantity) != int:
+        print(f'ERROR: "quantity" argument should be of type int, but got "{type(quantity)}" instead.')
+    elif min < 1:
+        print(f'ERROR: "min" value should be 1 or greater.')
+    elif max > 1000:
+        print(f'ERROR: "max" value should be 1000 or less.')
+    elif min > max:
+        print(f'ERROR: "min" value should not be greater than "max" value.')
+    elif quantity < 0:
+        print(f'ERROR: "quantity" value should not be negative.')
+    elif quantity > (max - min + 1):
+        print(f'ERROR: "quantity" value should not be greater than a pool size of possible values.')
     else:
         # 2. Let's generate values
-        chosen_values=random.sample(range(min,max+1),quantity)
+        chosen_values = random.sample(range(min, max + 1), quantity)
         # 3. Let's sort values
         chosen_values.sort()
-        return chosen_values
-        
+    
+    return chosen_values
 

@@ -14,11 +14,12 @@ def normalize_phone(phone_number:str) -> str:
     """
 
     # 1. Let's remove all non-digit characters
-    result=re.sub(r"[^\d]","",phone_number)
+    result = re.sub(r"[^\d]", "", phone_number)
     # 2. Let's process country code
-    if len(result)==9:
-         result="380"+result
-    if len(result)==10:
-         result="38"+result
-    return "+"+result
+    if len(result) == 9:
+         result = "380" + result
+    if len(result) == 10:
+         result = "38" + result
+    return ("+" + result)
+
 
